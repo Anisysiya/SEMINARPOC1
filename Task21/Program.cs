@@ -9,22 +9,25 @@
 
 Console.WriteLine("Введите координаты точки A: ");
 Console.Write("x: ");
-int x1 = Convert.ToInt32(Console.ReadLine());
+int Ax = Convert.ToInt32(Console.ReadLine());
 Console.Write("y: ");
-int y1 = Convert.ToInt32(Console.ReadLine());
+int Ay = Convert.ToInt32(Console.ReadLine());
 Console.Write("z: ");
-int z1 = Convert.ToInt32(Console.ReadLine());
+int Az = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine("Введите координаты точки B: ");
 Console.Write("x: ");
-int x2 = Convert.ToInt32(Console.ReadLine());
+int Bx = Convert.ToInt32(Console.ReadLine());
 Console.Write("y: ");
-int y2 = Convert.ToInt32(Console.ReadLine());
+int By = Convert.ToInt32(Console.ReadLine());
 Console.Write("z: ");
-int z2 = Convert.ToInt32(Console.ReadLine());
+int Bz = Convert.ToInt32(Console.ReadLine());
 
-double dist = GetDistance(x1, y1, z1, x2, y2, z2);
-double distRound = Math.Round(dist, 2, MidpointRounding.ToZero); // округление до 2-х знаков
-Console.Write("Расстояние между A и B: " + distRound);
+double distance = Math.Round(
+    Math.Sqrt(Math.Pow(Bx - Ax, 2) + Math.Pow(By - Ay, 2) + Math.Pow(Bz - Az, 2)),
+    2
+);
+Console.Write("Расстояние между A и B: " + distance);
 
 double GetDistance(int a1, int a2, int b1, int b2)
 {

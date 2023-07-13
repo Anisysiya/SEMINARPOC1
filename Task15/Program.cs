@@ -4,6 +4,7 @@
 // 6 -> да
 // 7 -> да
 // 1 -> нет
+
 namespace ConsoleApp3 
 { 
     internal class Program 

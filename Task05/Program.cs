@@ -5,14 +5,15 @@
 // 2 -> " -2, -1, 0, 1, 2"
 Console.WriteLine("Введите целое положительное число");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number <= 0)
+if(number<0)
 {
-    Console.WriteLine("Ошибка ввода");
+   Console.WriteLine("Ошибка ввода"); 
 }
 else
 {
-    int counter = -number;
-    while (counter <= number)
-        Console.Write(counter + "");
-    counter = counter + 1;
+      int counter = -number;
+    while (counter < number){
+        Console.Write(counter + " ");
+    counter = counter +1;
+    }
 }
