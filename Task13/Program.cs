@@ -4,19 +4,32 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-Console.Write("Введите число :");
-int number = Convert.ToInt32(Console.ReadLine());
-
-if (number >= 1000 || number < 100)
+int Prompt(string message)
 {
-    Console.WriteLine("Не трехзначное число!!!");
-    return;
+    Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
 }
-int GetSecond(int number)
+int GetThirdRanx(int number)
 {
-    while (number >= 1000) number /= 100;
-    int d = number % 10;
-    return d;
+    while(number>999)
+    {
+        number/=10;
+    }
+    return number%10;
 }
-Console.WriteLine(GetSecond(number));
-
+bool ValidateNumber(int number)
+{
+    if(number<100)
+    {
+        Console.WriteLine("Третьей цифры нет");
+        return false;
+    }
+    return true;
+}
+int number = Prompt("Введите число > ");
+if (ValidateNumber(number))
+{
+    Console.WriteLine(GetThirdRanx(number));
+}
