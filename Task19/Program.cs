@@ -8,6 +8,7 @@
 
 Console.WriteLine("Введите пятизначное число: ");
 string fivenumber = Console.ReadLine();
+
 int dlina = fivenumber.Length;
 
 if (dlina == 5)

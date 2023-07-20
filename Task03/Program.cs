@@ -2,8 +2,10 @@
 // название дня недели по заданному номеру.
 // 3 -> Среда
 // // 5 -> Пятница
+
 Console.Write("Введите номер дня недели: ");
 string number = Console.ReadLine();
+
 // if (number == "1")
 // {
 //     Console.WriteLine("Понедельник");
