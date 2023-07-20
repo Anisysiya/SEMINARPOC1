@@ -5,7 +5,7 @@
 // 89126 -> 5
 
 Console.Write("Введите число: ");
-int number = int.Parse(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 
 int count = GetCountDigits(number);
 Console.Write($"Количество цифр в числе {number} = {count}");
@@ -13,7 +13,6 @@ Console.Write($"Количество цифр в числе {number} = {count}")
 int GetCountDigits(int num)
 {
     if (num == 0) return 1;
-
     int counter = 0;
     while (num != 0)
     {
