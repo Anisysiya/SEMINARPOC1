@@ -15,15 +15,15 @@ PrintArray(numbers);
 double min = Int32.MaxValue;
 double max = Int32.MinValue;
 
-for (int z = 0; z < numbers.Length; z++)
+for (int i = 0; i < numbers.Length; i++)
 {
-    if (numbers[z] > max)
+    if (numbers[i] > max)
         {
-            max = numbers[z];
+            max = numbers[i];
         }
-    if (numbers[z] < min)
+    if (numbers[i] < min)
         {
-            min = numbers[z];
+            min = numbers[i];
         }
 }
 
