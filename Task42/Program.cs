@@ -5,7 +5,7 @@
 // 2 -> 10
 
 Console.Write("Введите десятичное число: ");
-int number = int.Parse(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 
 // int result = DecToBinnary(number);
 // Console.WriteLine($"Число в двоичном представлении = {result}");
