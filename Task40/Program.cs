@@ -5,11 +5,11 @@
 // меньше суммы двух других сторон.
 
 Console.Write("Введите первую сторону треугольника: ");
-int firstSide = int.Parse(Console.ReadLine());
+int firstSide = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите вторую сторону треугольника: ");
-int secondSide = int.Parse(Console.ReadLine());
+int secondSide = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите третью сторону треугольника: ");
-int thirdSide = int.Parse(Console.ReadLine());
+int thirdSide = Convert.ToInt32(Console.ReadLine());
 
 bool isTriangle = IsTriangleExists(firstSide, secondSide, thirdSide);
 Console.WriteLine(isTriangle ? "Треугольник существует": "Треугольник не существует");
