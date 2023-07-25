@@ -15,7 +15,7 @@ namespace ConsoleApp3
             while (true) 
             { 
                 Console.Write("\n Введите номер дня недели  "); 
-                int num = int.Parse(Console.ReadLine()); 
+                int num = Convert.ToInt32(Console.ReadLine()); 
                 if (num >= 1 && num <= 5) 
                 { 
                     Console.Write(" Нет, это не выходной"); 
