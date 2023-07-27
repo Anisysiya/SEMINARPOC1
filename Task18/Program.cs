@@ -6,7 +6,7 @@ Console.WriteLine("Введите номер четверти");
 string quarter = Console.ReadLine();
 
 string coordinatesRange = GetCoordinates(quarter);
-Console.WriteLine(coordinatesRange == null ? "Ошибка ввода": coordinatesRange);
+Console.WriteLine(coordinatesRange == null ? "Ошибка ввода" : coordinatesRange);
 
 string? GetCoordinates(string quarterNumber)
 {
