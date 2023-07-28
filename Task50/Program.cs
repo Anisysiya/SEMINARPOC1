@@ -11,12 +11,10 @@ Console.Write("Введите строку: ");
 int pos1 = Convert.ToInt32(Console.ReadLine()) - 1;
 Console.Write("Введите столбец: ");
 int pos2 = Convert.ToInt32(Console.ReadLine()) - 1;
-int n = 3;
-int m = 4;
 
 Random random = new Random();
 
-int[,] arr = new int[n, m];
+int[,] arr = new int[3, 4];
 
 Console.WriteLine("Исходный массив: ");
 for (int i = 0; i < arr.GetLength(0); i++)
@@ -28,7 +26,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
     }
     Console.WriteLine();
 }
-if (pos1 < 0 | pos1 > arr.GetLength(0) - 1 | pos2 < 0 | pos2 > arr.GetLength(1) - 1)
+if (pos1 < 0 || pos1 > arr.GetLength(0) - 1 && pos2 < 0 || pos2 > arr.GetLength(1) - 1)
 {
     Console.WriteLine("Элемент не существует  ");
 }
