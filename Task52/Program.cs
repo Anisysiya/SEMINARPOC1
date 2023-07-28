@@ -6,57 +6,26 @@
 //8 4 2 4
 //Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int rows = 3;
-int colums = 4;
-int[,] numbers = new int[rows, colums];
+Random random = new Random();
+int[,] arr = new int[random.Next(1, 10), random.Next(1, 10)];
 
-FillArray2D(numbers);
-PrintArray2D(numbers);
-
-double[] avgNumbers = new double[numbers.GetLength(1)];
-
-for (int i = 0; i < numbers.GetLength(1); i++)
+for (int i = 0; i < arr.GetLength(0); i++)
 {
-    double result = 0;
-    for (int j = 0; j < numbers.GetLength(0); j++)
+    for (int j = 0; j < arr.GetLength(1); j++)
     {
-        result += numbers[j, i];
-    }
-    avgNumbers[i] = result / numbers.GetLength(0);
-}
-
-PrintArray(avgNumbers);
-
-void FillArray2D(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = new Random().Next(1, 10);
-        }
-    }
-}
-
-void PrintArray2D(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.WriteLine();
+        arr[i, j] = random.Next(1, 10);
+        Console.Write(arr[i, j] + " ");
     }
     Console.WriteLine();
 }
-
-void PrintArray(double[] array)
+Console.WriteLine("---------------------------");
+for (int j = 0; j < arr.GetLength(1); j++)
 {
-    for (int i = 0; i < array.Length; i++)
+    double sum = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        Console.Write(array[i] + " ");
+        sum += arr[i, j];
     }
-
-    Console.WriteLine();
+    Console.Write($"{ sum / arr.GetLength(0)} ");
 }
+Console.ReadLine();
