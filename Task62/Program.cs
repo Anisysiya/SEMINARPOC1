@@ -5,10 +5,10 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int len = 4;
-int[,] table = new int[len, len];
-FillArraySpiral(table, len);
-PrintArray(table);
+int size = 4;
+int[,] array = new int[size, size];
+FillArraySpiral(array, size);
+PrintArray(array);
 
 
 //  Функция заполнения массива по спирали начиная с 1
