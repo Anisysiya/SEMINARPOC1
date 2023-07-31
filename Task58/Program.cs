@@ -20,10 +20,6 @@ WriteArray(secomdMartrix);
 
 int[,] resultMatrix = new int[4,4];
 
-MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
-Console.WriteLine($"\nПроизведение первой и второй матриц:");
-WriteArray(resultMatrix);
-
 void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
 {
   for (int i = 0; i < resultMatrix.GetLength(0); i++)
@@ -62,3 +58,7 @@ void WriteArray (int[,] array)
     Console.WriteLine();
   }
 }
+
+MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
+Console.WriteLine($"\nПроизведение первой и второй матриц:");
+WriteArray(resultMatrix);
