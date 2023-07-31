@@ -24,11 +24,16 @@ Console.WriteLine(arr.GetLength(0));
 for (int j = 0; j < arr.GetLength(1); j++)
 {
     double sum = 0;
+    
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         sum += arr[i, j];
     }
-    Console.Write($"{sum / arr.GetLength(0)} ");
+    // Console.Write($"{sum / arr.GetLength(0)} ");
+    double result = sum / arr .GetLength(0);
+    Console.Write($"{Math.Round(result,2)} ");
 }
+
+
 
 Console.WriteLine();
