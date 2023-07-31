@@ -8,9 +8,6 @@
 // 26(1,0,1) 55(1,1,1)
 
 int[,,] array3D = new int[2, 2, 2];
-FillArray(array3D);
-PrintIndex(array3D);
-
 
 // Функция вывода индекса элементов 3D массива
 void PrintIndex(int[,,] arr)
@@ -45,4 +42,5 @@ void FillArray(int[,,] arr)
     }
 }
  
- 
+ FillArray(array3D);
+PrintIndex(array3D);
