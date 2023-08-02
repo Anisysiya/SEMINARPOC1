@@ -14,6 +14,7 @@ int[,] matrixB = Create2DMatrix(5, 4, 0, 10); // Создаем матрицу
 Console.WriteLine("\nМатрица B:");
 Print2DMatrix(matrixB);
 
+// Функция заполнения матриц случайными числами от min до max
 int[,] Create2DMatrix(int column, int row, int min, int max)
 {
     int[,] matrix = new int[column, row];
@@ -26,6 +27,7 @@ int[,] Create2DMatrix(int column, int row, int min, int max)
     }
     return matrix;
 }
+// Функция вывода двумерных матриц
 void Print2DMatrix(int[,] matrix)
 {
 
@@ -38,7 +40,7 @@ void Print2DMatrix(int[,] matrix)
         Console.WriteLine("");
     }
 }
-
+//Функция произведения двух матриц
 int[,]? GetMultiplicationMatrix(int[,] matrixA, int[,] matrixB)
 {
     int rowA = matrixA.GetLength(0);
