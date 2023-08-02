@@ -1,64 +1,73 @@
-﻿// Задача 58: Задайте две матрицы. Напишите программу,
-//  которая будет находить произведение двух матриц.
-// Например, даны 2 матрицы:
-// 2 4 | 3 4
-// 3 2 | 3 3
-// Результирующая матрица будет:
-// 18 20
-// 15 18
+﻿// // Задача 58: Задайте две матрицы. Напишите программу,
+// //  которая будет находить произведение двух матриц.
+// // Например, даны 2 матрицы:
+// // 2 4 | 3 4
+// // 3 2 | 3 3
+// // Результирующая матрица будет:
+// // 18 20
+// // 15 18
 
+int[,] matrixA = Create2DMatrix(4, 5, 0, 10); // Создаем матрицу
+Console.WriteLine("\nМатрица A:");
+Print2DMatrix(matrixA);
+int[,] matrixB = Create2DMatrix(5, 4, 0, 10); // Создаем матрицу
+Console.WriteLine("\nМатрица B:");
+Print2DMatrix(matrixB);
 
-int[,] firstMartrix = new int[4, 4];
-CreateArray(firstMartrix);
-Console.WriteLine($"\nПервая матрица:");
-WriteArray(firstMartrix);
-
-int[,] secomdMartrix = new int[4, 4];
-CreateArray(secomdMartrix);
-Console.WriteLine($"\nВторая матрица:");
-WriteArray(secomdMartrix);
-
-int[,] resultMatrix = new int[4,4];
-
-void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
+int[,] Create2DMatrix(int column, int row, int min, int max)
 {
-  for (int i = 0; i < resultMatrix.GetLength(0); i++)
-  {
-    for (int j = 0; j < resultMatrix.GetLength(1); j++)
+    int[,] matrix = new int[column, row];
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-      int sum = 0;
-      for (int k = 0; k < firstMartrix.GetLength(1); k++)
-      {
-        sum = firstMartrix[i,j] * secomdMartrix[i,j];
-      }
-      resultMatrix[i,j] = sum;
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = new Random().Next(min, max);
+        }
     }
-  }
+    return matrix;
+}
+void Print2DMatrix(int[,] matrix)
+{
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j]} ");
+        }
+        Console.WriteLine("");
+    }
 }
 
-void CreateArray(int[,] array)
+int[,]? GetMultiplicationMatrix(int[,] matrixA, int[,] matrixB)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    int rowA = matrixA.GetLength(0);
+    int columnA = matrixA.GetLength(1);
+    int rowB = matrixB.GetLength(0);
+    int columnB = matrixB.GetLength(1);
+
+    int[,] matrixResult = new int[rowA, columnB];
+
+    if (columnA != rowB)
     {
-      array[i, j] = new Random().Next(1,9);
+        return null;
     }
-  }
+
+    for (int mA = 0; mA < rowA; mA++)
+    {
+        for (int nB = 0; nB < columnB; nB++)
+        {
+            int sum = 0;
+            for (int mB = 0; mB < rowB; mB++)
+            {
+                sum += matrixA[mA, mB] * matrixB[mB, nB];
+            }
+            matrixResult[mA, nB] = sum;
+        }
+    }
+    return matrixResult;
 }
 
-void WriteArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i,j] + " ");
-    }
-    Console.WriteLine();
-  }
-}
 
-MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
-Console.WriteLine($"\nПроизведение первой и второй матриц:");
-WriteArray(resultMatrix);
+Console.WriteLine("\nПроизведения двух матриц А на матрицу В:");
+Print2DMatrix(GetMultiplicationMatrix(matrixA, matrixB));
