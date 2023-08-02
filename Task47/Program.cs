@@ -15,7 +15,9 @@ void PrintArray(double[,] matr)
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 4; j++)
-        { Console.Write($"{matr[i, j]} "); }
+        {
+            Console.Write($"{matr[i, j]}  ");
+        }
         Console.WriteLine();
     }
 }
@@ -25,7 +27,9 @@ void FillArray(double[,] matr)
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 4; j++)
-        { matr[i, j] = Convert.ToDouble(rnd.Next(-100, 100) / 10.0); }
+        {
+            matr[i, j] = rnd.Next(-100,100) / 10.0;
+        }
     }
 }
 FillArray(twoDimArray);
