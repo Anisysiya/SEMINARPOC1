@@ -5,11 +5,8 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int size = 4;
+int size = 4;              //Создаем массив 4 на 4
 int[,] array = new int[size, size];
-FillArraySpiral(array, size);
-PrintArray(array);
-
 
 //  Функция заполнения массива по спирали начиная с 1
 void FillArraySpiral(int[,] array, int n)
@@ -45,3 +42,7 @@ void PrintArray(int[,] array)
         Console.WriteLine();
     }
 }
+
+FillArraySpiral(array, size);
+PrintArray(array);
+
