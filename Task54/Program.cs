@@ -11,7 +11,7 @@
 
 int[,] array = new int[3, 4];
 
-// Функция заполнения массива рандомно числами от 1 до 9
+// Функция заполнения массива случайными числами от 1 до 9
 void FillArrayRandom(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -22,7 +22,18 @@ void FillArrayRandom(int[,] array)
         }
     }
 }
-
+// Функция вывода двумерного массива
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
 // Функция сортировки элементов в строке двумерного массива, по убыванию
 void SortToLower(int[,] array)
 {
@@ -40,19 +51,6 @@ void SortToLower(int[,] array)
                 }
             }
         }
-    }
-}
-
-// Функция вывода двумерного массива
-void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write($"{array[i, j]} ");
-        }
-        Console.WriteLine();
     }
 }
 
