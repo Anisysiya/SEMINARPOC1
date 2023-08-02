@@ -12,7 +12,7 @@ int pos1 = Convert.ToInt32(Console.ReadLine()) - 1;
 Console.Write("Введите столбец: ");
 int pos2 = Convert.ToInt32(Console.ReadLine()) - 1;
 
-Random random = new Random();
+Random rnd = new Random();
 
 int[,] arr = new int[3, 4];
 
@@ -21,7 +21,7 @@ for (int i = 0; i < arr.GetLength(0); i++)
 {
     for (int j = 0; j < arr.GetLength(1); j++)
     {
-        arr[i, j] = random.Next(1, 10);
+        arr[i, j] = rnd.Next(1, 10);
         Console.Write("{0} ", arr[i, j]);
     }
     Console.WriteLine();
