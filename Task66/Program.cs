@@ -3,9 +3,9 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-Console.WriteLine("Введите N");
-int n = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите M");
+int n = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите N");
 int m = int.Parse(Console.ReadLine());
 
 int result = 0;
@@ -17,4 +17,4 @@ int Sum(int n, int m)
         return n;
     return m + Sum(n, m - 1);
 }
-Console.WriteLine("Программа вычисления функции Аккермана");
+Console.WriteLine("Cумму натуральных элементов в промежутке от M до N");
